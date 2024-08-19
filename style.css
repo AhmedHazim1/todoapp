@@ -1,0 +1,147 @@
+:root{
+    --background: hsl(235, 21%, 11%);
+    --element: hsl(235, 24%, 19%);
+    --white: hsl(0, 0%, 100%);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--background);
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--white);
+}
+canvas{
+    position: absolute;
+    z-index: -1;
+}
+/* header */
+header{
+    display: flex;
+    text-align: center;
+    height: 8em;
+}
+h1{
+    font-size: 2.5rem;
+    letter-spacing: .4em;
+    padding-left: .4em;
+    margin: auto;
+}
+
+/* main */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    max-width: 35em;
+    height: fit-content;
+    margin: auto;
+}
+#createTodo{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--element);
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: .1em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: .3em 1em;
+}
+#todosList{
+    margin-top: 1em;
+    display: grid;
+    width: calc(100% + 2.3em);
+    height: fit-content;
+}
+.todo{
+    position: relative;
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    background-color: transparent;
+    padding: .5em 0;
+    list-style: none;
+}
+.todo::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--white);
+}
+.todoCheckbox{
+    cursor: pointer;
+    margin-left: .5em;
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: .1em;
+    background-color: rgb(236, 236, 236);
+    transition: all .5s ease;
+}
+.todoCheckbox:checked{
+    background-image: url(./images/check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.2em;
+    background-color: hsl(120, 100%, 69%);
+}
+.removeTodoBtn{
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    top: 30%;
+    right: 1%;
+    width: .7em;
+    height: auto;
+    margin: auto;
+    transition: all .5s ease;
+}
+.todo:hover .removeTodoBtn{
+    opacity: 1;
+}
+#todosInfo{
+    position: relative;
+    display: flex;
+    width: 100%;
+    color: var(--white);
+}
+#todosInfo h2{
+    position: absolute;
+    font-size: 1rem;
+    top: .3em;
+}
+#todosInfo .clearCompletedBtn{
+    position: absolute;
+    top: .3em;
+    right: 0;
+}
+.bt{
+    cursor: pointer;
+    border: none;
+    font-size: .9rem;
+    background-color: transparent;
+    color: var(--white);
+}
+#filterTodos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-top: .2em;
+}
+@media (max-width: 800px) {
+    #filterTodos{
+        padding-top: 2em;
+    }
+}
+@media (max-width: 1000px) {
+    .removeTodoBtn{
+        opacity: 1;
+    }
+}

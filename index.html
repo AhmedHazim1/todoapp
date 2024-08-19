@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACZ0lEQVRYhb2WL0wcQRTG58SKUyCaVGBJU5LNzcy++fdml2UDqCZHzlxNXSGTmoZcUoNAViBaUYGtKIIEUUNSUVPRpBKBqiHBICrOYTBTdc1ynT32EuZeMvLt75tv9s18hCywHLjkRaGeGQO6X1VPFskmOBx1M1AnVNo7rgtPBV5KuyEXJoBzOOS68PVFM/ltIXBhq5SpfPyfAIlX0eE4HHWZMN+n4VwXnoM6iy4AQO2F4EzlY2GrNCocEVdD1nNdeM7h0HvSiQZ34BIO6iy4e6F+bAMsRYMTQgjnYncycvfg0t6ilDYqfBNxpQfmOrT7HhPvo8IduCQDdRKCU4GXg4otRxWgcH3QaD3iRlT4LOuZKo4duCQa3HvSScF8arJ+S+un0eCEECJMvsOkvQ1ZL0y+ExW+DbBEBV4GrZf2c9QLx3vSocJ8DI4cmOtNxJUHP5KV5Ro362+YyvdaNdQKpbQh66m0d9LkL1t9oCfwz6QxBXXRNigMKrZMQf9qeula/fUU1NfAud0ou4UP9TIGB03WI+Jqm00QCvpn03NpjOw39QlEHg4Z9g5A7bWCExKOSnURMsteTffMChlM6HMcjrqtBQwqttx0d/+bYy5e10cJQO43Cc7Kcq01/N6OwByH7vCJrSmDAwcuycpyrTFkgHo7N3xSDlxCKXyYJYJl6ogJfd4UMuayvklEyuBdaK5nLaby8aOFDAcuAZD7c4ngcPgo8El5TzpKiN3Gs66tFNRFlHznPekYI/uzRCwk3ym7hUzam6CATB1FfenqInrC/J62Pnq+qxciPudCn1KJV0zoL63v+gfqL6JP7M5fQzN3AAAAAElFTkSuQmCC">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="./js/background.js" defer></script>
+    <script     src="./js/app.js" defer></script>
+    <title>todo</title>
+</head>
+<body>
+    <canvas></canvas>
+    <header>
+        <h1>TODO</h1>
+    </header>
+    <main>
+        <input tabindex="1" type="text" name="createTodo" id="createTodo" placeholder="Create a new todo...">
+        
+        <ul id="todosList">
+        </ul>
+        
+        <article id="todosInfo">
+            <h2>
+                <span id="leftTodosNum">0</span> 
+                left
+            </h2>
+            <button class="bt clearCompletedBtn" onclick="clearCompleted()">Clear Completed</button>
+        </article>
+        
+        <div id="filterTodos">
+            <button class="bt filterBtn" onclick="filter('all')">All</button>
+            <button class="bt filterBtn" onclick="filter('active')">Active</button>
+            <button class="bt filterBtn" onclick="filter('completed')">Completed</button>
+        </div>
+    </main>
+</body>
+</html>
